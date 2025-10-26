@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <title>圆周撸</title>
+  <title>关于我们 | 圆周撸</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-png" href="img/icon/favicon.png">
@@ -11,6 +11,9 @@
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f5f7fa;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     
     .header {
@@ -89,19 +92,191 @@
       padding: 5px;
     }
     
+    .content {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+    
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #3498db, #2c3e50);
+      color: white;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: #e74c3c;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      background-color: #c0392b;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .about-section {
+      background: white;
+      border-radius: 10px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .about-section h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+    
+    .about-section p {
+      line-height: 1.8;
+      margin-bottom: 15px;
+      color: #555;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .team-member {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+    
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 4px solid #3498db;
+    }
+    
+    .team-member h3 {
+      color: #2c3e50;
+      margin-bottom: 5px;
+    }
+    
+    .team-member p {
+      color: #7f8c8d;
+      margin-bottom: 15px;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: #3498db;
+      color: white;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background-color: #2980b9;
+      transform: scale(1.1);
+    }
+    
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .feature-card {
+      background: white;
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #3498db, #2c3e50);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .feature-card:active {
+      transform: translateY(-2px);
+    }
+    
+    .feature-card h3 {
+      color: #2c3e50;
+      margin-top: 0;
+    }
+    
     @media (max-width: 768px) {
       .header {
         height: auto;
         padding: 15px;
         flex-wrap: wrap;
       }
-    
-    .content {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    
+      
       .nav-menu {
         display: none;
         width: 100%;
@@ -130,6 +305,14 @@
       .hero h1 {
         font-size: 2rem;
       }
+      
+      .about-section {
+        padding: 25px;
+      }
+      
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -145,15 +328,55 @@
     <button class="hamburger">☰</button>
     
     <ul class="nav-menu">
-      <li><a href="index.html" class="active">首页</a></li>
+      <li><a href="index.html">首页</a></li>
       <li><a href="biodiversity.html">生物多样性</a></li>
       <li><a href="gallery.html">画廊</a></li>
       <li><a href="social.html">射交指道</a></li>
-      <li><a href="about.html">简介</a></li>
+      <li><a href="about.html" class="active">简介</a></li>
     </ul>
   </div>
-  
+
+  <div class="content">
+    <div class="hero">
+      <h1>关于圆周撸</h1>
+      <p>请输入文本</p>
+      <a href="index.html" class="btn">返回首页</a>
+    </div>
+    
+    <div class="about-section">
+      <h2>简介</h2>
+      <p>请输入文本</p>
+      <p>一个初<sub><del>中</del></sub>生吃饱了撑的做的</p>
+      <p>请输入文本</p>
+    </div>
+    
+    <div class="about-section">
+      <h2>请输入文本</h2>
+      <p>请输入文本</p>
+      <ul style="line-height: 1.8; color: #555;">
+        <li>文本请输入</li>
+        <li>请入输文本</li>
+        <li>文本请入</li>
+        <li>入入入入入入</li>
+        <li>阿巴阿巴</li>
+      </ul>
+    </div>
+    
+    <div class="about-section">
+      <h2>网站特色</h2>
+      <div class="features">
+        <p>没有特色</p>
+      </div>
+    </div>
+    
+    <div class="about-section">
+      <h2>投稿</h2>
+      <p>3761786544@qq.com</p>
+    </div>
+  </div>
+
   <script>
+    // 移动端菜单切换
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     
@@ -161,17 +384,40 @@
       navMenu.classList.toggle('active');
     });
     
+    // 点击菜单项后关闭移动端菜单
     document.querySelectorAll('.nav-menu a').forEach(link => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
           navMenu.classList.remove('active');
+        }
+      });
+    });
+    
+    // 当前页面高亮
     const currentPage = window.location.pathname.split('/').pop();
     document.querySelectorAll('.nav-menu a').forEach(link => {
       if (link.getAttribute('href') === currentPage) {
         link.classList.add('active');
       }
     });
+    
+    // 卡片点击跳转功能
+    document.querySelectorAll('.feature-card').forEach(card => {
+      card.addEventListener('click', function() {
+        // 添加点击反馈效果
+        this.style.transform = 'translateY(-2px)';
+        
+        // 获取卡片链接
+        const link = this.getAttribute('data-link');
+        
+        // 延迟跳转以显示点击效果
+        setTimeout(() => {
+          if (link) {
+            window.location.href = link;
+          }
+        }, 150);
+      });
+    });
   </script>
-
 </body>
 </html>
