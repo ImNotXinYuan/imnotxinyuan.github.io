@@ -66,7 +66,7 @@ async function loadArtworks() {
                 artist: metadata.artist || '未知艺术家',
                 time: metadata.time || '未知时间',
                 category: metadata.category || '其他',
-                imageUrl: `img/gallery/${folder}/pictures/1.png`
+                imageUrl: `img/gallery/${folder}/pictures/1.webp`
             });
         } catch (error) {
             console.warn(`加载 ${folder} 的作品信息失败:`, error);
