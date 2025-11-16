@@ -1,3 +1,21 @@
+/* 重置样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 确保body背景色 */
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    overflow-x: hidden;
+}
+
 /* 导航栏样式 */
 .header {
     position: fixed;
@@ -36,17 +54,13 @@
     background-color: rgba(106, 17, 203, 0.1);
 }
 
-.nav-brand i {
-    color: #6a11cb;
-}
-
 .nav-list {
     display: flex;
     list-style: none;
 }
 
 .nav-item {
-    margin-left: 0.5rem; /* 减少间距，让点击区域更紧凑 */
+    margin-left: 0.5rem;
 }
 
 .nav-link {
@@ -54,15 +68,15 @@
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s;
-    padding: 0.8rem 1.2rem; /* 增加内边距，扩大点击区域 */
-    border-radius: 5px; /* 添加圆角 */
-    display: block; /* 让链接变成块级元素 */
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+    display: block;
     position: relative;
 }
 
 .nav-link:hover {
     color: #6a11cb;
-    background-color: rgba(106, 17, 203, 0.1); /* 悬停背景色 */
+    background-color: rgba(106, 17, 203, 0.1);
 }
 
 .nav-link::after {
@@ -87,7 +101,7 @@
     flex-direction: column;
     cursor: pointer;
     z-index: 1001;
-    padding: 0.5rem; /* 增加汉堡菜单的点击区域 */
+    padding: 0.5rem;
 }
 
 .bar {
@@ -112,7 +126,7 @@
         text-align: left;
         transition: 0.5s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
-        padding: 5rem 1rem; /* 减少移动端内边距 */
+        padding: 5rem 1rem;
         z-index: 999;
     }
 
@@ -126,24 +140,15 @@
     }
 
     .nav-item {
-        margin: 0.5rem 0; /* 移动端减少间距 */
+        margin: 0.5rem 0;
         width: 100%;
     }
 
     .nav-link {
-        padding: 1rem 1.5rem; /* 移动端增加点击区域 */
+        padding: 1rem 1.5rem;
         margin: 0;
         width: 100%;
         box-sizing: border-box;
-    }
-
-    .nav-link::after {
-        left: 1.5rem;
-        right: 1.5rem;
-    }
-
-    .nav-link:hover::after {
-        width: calc(100% - 3rem);
     }
 
     .hamburger {
@@ -161,4 +166,9 @@
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+}
+
+/* 确保背景色不会被覆盖 */
+body {
+    background-color: #0a0a0a !important;
 }
